@@ -1,0 +1,110 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Air Quality Value in Victoria Throughout the Day",
+  "width": 500,
+  "height": 400,
+  "padding": {"top": 0, "left": 0, "right": 0, "bottom": 0},  
+  "data": {
+    "url": "2022_air.csv"
+  },
+  "params": [
+    {
+      "name": "Time_Filter",
+      "value": 10,
+      "bind": {
+        "input": "range",
+        "min": 10,
+        "max": 18,
+        "step": 1,
+        "name": "Time of the Day: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "hours(datum.time) == Time_Filter"  
+    }
+  ],
+  "projection": {
+    "type": "mercator",
+    "scale": 10000,
+    "center": [145.5, -37.7],
+    "clipExtent": [[20, 20], [480, 380]]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "vic_localities.json",
+        "format": {
+          "type": "topojson",
+          "feature": "vic_localities"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e0e0e0",  
+        "stroke": "white"
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "strokeWidth": 1,
+        "stroke": "black",  
+        "opacity": 0.8  
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [5, 10, 20, 25],
+            "range": [50, 150, 250, 400, 600]  
+          },
+          "legend": {
+            "title": "PM2.5 Concentration (ug/m3)",
+            "orient": "right"
+          }
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 40],
+            "range": ["white", "darkred"]  
+          },
+          "legend": {
+            "title": "PM2.5 Concentration (ug/m3)"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "location",
+            "type": "nominal",
+            "title": "Location"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "title": "PM2.5 (ug/m3)",
+            "format": ".2f"
+          },
+          {
+            "field": "time",
+            "type": "temporal",
+            "title": "Date"
+          }
+        ]
+      }
+    }
+  ]
+}
