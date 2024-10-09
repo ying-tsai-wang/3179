@@ -1,2 +1,2 @@
-datetime_local,location_name,latitude,longitude,value,parameter_name,unit_of_measure
+time,location_name,latitude,longitude,value,parameter_name,unit_of_measure
 2023-01-01 06:00:00,Mooroolbark,-37.7749672,145.3285,15.4,PM10,ug/m3
