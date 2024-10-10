@@ -1,2 +1,16 @@
-time,location_name,latitude,longitude,value,parameter_name,unit_of_measure
-2023-01-01 06:00:00,Mooroolbark,-37.7749672,145.3285,15.4,PM10,ug/m3
+datetime_local,location_name,latitude,longitude,value,parameter_name,unit_of_measure
+2023-01-01 00:00:00,Geelong South,-38.17356,144.3703,34.409,BSP,1/Mm
+2023-01-01 00:00:00,Mooroolbark,-37.7749672,145.3285,33.646,BSP,1/Mm
+2023-01-01 00:00:00,Alphington,-37.7784081,145.0306,34.258,BSP,1/Mm
+2023-01-01 02:00:00,Dandenong,-37.98576,145.1987,49.173,BSP,1/Mm
+2023-01-01 02:00:00,Geelong South,-38.17356,144.3703,30.497,BSP,1/Mm
+2023-01-01 02:00:00,Mooroolbark,-37.7749672,145.3285,29.625,BSP,1/Mm
+2023-01-01 02:00:00,Alphington,-37.7784081,145.0306,59.945,BSP,1/Mm
+2023-01-01 03:00:00,Dandenong,-37.98576,145.1987,64.278,BSP,1/Mm
+2023-01-01 03:00:00,Geelong South,-38.17356,144.3703,43.38,BSP,1/Mm
+2023-01-01 03:00:00,Mooroolbark,-37.7749672,145.3285,30.808,BSP,1/Mm
+2023-01-01 03:00:00,Alphington,-37.7784081,145.0306,52.003,BSP,1/Mm
+2023-01-01 04:00:00,Dandenong,-37.98576,145.1987,63.276,BSP,1/Mm
+2023-01-01 04:00:00,Geelong South,-38.17356,144.3703,53.458,BSP,1/Mm
+2023-01-01 04:00:00,Mooroolbark,-37.7749672,145.3285,33.055,BSP,1/Mm
+
